@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+:root {
+    --nutmeg: #854632;
+    --raspberry: #7b284f;
+
+    --white: #ffffff;
+    --rose-white: #fff5fa;
+    --eggshell: #f3e6d8;
+    --light-grey: #e4ded8;
+    --brown: #5f574e;
+    --charcoal: #302d2c;
+
+    --text: 1rem;
+    --title: "Young Serif", serif;
+    --sub: "Outfit", sans-serif;
+
+    --weight-sm: 400;
+    --weight-md: 600;
+    --weight-lg: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--sub);
+    font-weight: var(--weight-sm);
+    font-size: var(--text);
+}
+
+body {
+    width: 100%;
+    background-color: var(--rose-white);
+}
+
+main {
+    width: 100%;
+    padding: 5rem 0;
+}
+
+.card {
+    width: 47%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--white);
+    box-shadow: 0 0 15px var(--light-grey);
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 1.8rem;
+}
+
+.illustration {
+    width: 100%;
+    border-radius: 20px;
+}
+
+h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-family: var(--title);
+    color: var(--charcoal);
+}
+
+h3, h4 {
+    font-family: var(--title);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: var(--nutmeg);
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: var(--text);
+    font-weight: var(--weight-md);
+}
+
+.text {
+    font-weight: var(--weight-sm);
+    color: var(--brown);
+}
+
+ul, ol {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding-left: 1.5rem;
+
+    & li {
+        padding-left: .5rem;
+    }
+}
+
+.preparation-time {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: var(--rose-white);
+    border-radius: 10px;
+
+    & h2 {
+        font-size: 1.3rem;
+        font-weight: var(--weight-md);
+        margin-bottom: 1rem;
+        color: var(--raspberry);
+    }
+
+    .title {
+        color: var(--nutmeg);
+    }
+}
+
+.ingredients,
+.instrutions {
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.instrutions {
+    .title {
+        color: var(--nutmeg);
+    }
+}
+
+.nutrition {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.nutritions {
+    width: 100%;
+    margin-top: .3rem;
+
+    & div {
+        width: 100%;
+        
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 5rem;
+
+        & p {
+            width: 30%;
+            padding: 1rem 2rem;
+        }
+    }
+
+    .title { 
+        font-weight: var(--weight-lg);
+        color: var(--nutmeg);
+    }
+}
+
+.nutritions > *:not(.nut:last-child) {
+    border-bottom: 1px solid var(--light-grey);
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 0;
+    }
+    .card {
+        width: 100%;
+        padding: 0;
+    }
+    .illustration {
+        border-radius: 0;
+    }
+    h1, .sub,
+    .preparation-time,
+    .ingredients,
+    .instrutions,
+    .nutrition {
+        margin-left: 1rem;
+        width: 90%;
+    }
+}
